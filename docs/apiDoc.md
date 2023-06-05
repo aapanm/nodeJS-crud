@@ -333,10 +333,6 @@ If your API supports pagination, explain how pagination works and provide exampl
 
 Describe how errors are handled by the API and provide examples of error responses.
 
-## Examples
-
-Provide a few examples of common API use cases, including the request and response details.
-
 ## Conclusion
 
 In conclusion, this API documentation provides a comprehensive guide on how to interact with the 'Parent Child Api'. It has covered the authentication mechanism, base URL, and detailed information about each endpoint, including their purpose, parameters, request/response structures, and possible error scenarios.

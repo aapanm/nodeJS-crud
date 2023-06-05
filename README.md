@@ -16,13 +16,13 @@ To install and set up the project on your local machine, follow these steps:
 1. Clone the Git repository using the following command:
 
    ```bash
-   git clone https://github.com/your-username/project-name.git
+   git clone https://github.com/aapanm/user-operation-system
    ```
 
 2. Change to the project directory:
 
    ```bash
-   cd project-name
+   cd user-operation-system
    ```
 
 3. Install the project dependencies by running:
