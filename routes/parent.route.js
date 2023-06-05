@@ -6,12 +6,13 @@ import {
   parentDataDelete,
   parentDataUpdate,
 } from "../controller/parent.controller.js";
+import { validateJSON } from "../middleware/validate.middleware.js";
 
 const route = express.Router();
 
 route.get("/parent", getParentList);
 route.get("/parent/:parentID", getParent);
-route.post("/createParent", parentDataEntry);
+route.post("/createParent", validateJSON, parentDataEntry);
 route.put("/updateParent", parentDataUpdate);
 route.delete("/parent", parentDataDelete);
 

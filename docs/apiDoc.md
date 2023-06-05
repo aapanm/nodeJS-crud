@@ -325,9 +325,18 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
     }
     ```
 
-## Middleware
+# Middleware Validation - validateJSON
 
-If your API supports pagination, explain how pagination works and provide examples.
+The `validateJSON` middleware function is responsible for validating the JSON data received in the request body. It checks if all the required fields exist and sends an error response if any required field is missing.
+
+-**Error Response**:
+If any required fields are missing in the request body, the middleware will send the following error response with status code 403:
+
+```json
+{
+  "error": "One or more required fields missing!"
+}
+```
 
 ## Error Handling
 
@@ -336,3 +345,5 @@ Describe how errors are handled by the API and provide examples of error respons
 ## Conclusion
 
 In conclusion, this API documentation provides a comprehensive guide on how to interact with the 'Parent Child Api'. It has covered the authentication mechanism, base URL, and detailed information about each endpoint, including their purpose, parameters, request/response structures, and possible error scenarios.
+
+[Test Documentation](unit.xml)
