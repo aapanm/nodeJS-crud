@@ -6,8 +6,7 @@
 
 ## parent_child_api
 
-- Timestamp: 2023-06-06T11:23:21
-- File: [index.spec.js](../test/index.spec.js);
+- File: [index.spec.js](../test/index.spec.js)
 - Total tests: 16
 - Time: 0.768 seconds
 - Failures: 0
