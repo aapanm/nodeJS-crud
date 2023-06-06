@@ -1,5 +1,6 @@
 import {
   getChildListService,
+  getChildListWithParentIdService,
   createChildService,
   getChildWithId,
   deleteChildService,
@@ -9,6 +10,11 @@ import { getParentWithId } from "../service/parent.service.js";
 
 const getChildrenList = async (req, res) => {
   const response = await getChildListService();
+  res.status(200).send(response);
+};
+
+const getChildrenListWithParentId = async (req, res) => {
+  const response = await getChildListWithParentIdService(req.params.parentID);
   res.status(200).send(response);
 };
 
@@ -43,4 +49,5 @@ export {
   getChildren,
   childrenDataUpdate,
   childrenDataDelete,
+  getChildrenListWithParentId,
 };

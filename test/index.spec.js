@@ -84,6 +84,18 @@ describe("parent_child_api", () => {
     lastName: "Depp",
   };
 
+  const children_3 = {
+    parentIdx: 301,
+    childId: 503,
+    firstName: "Johny",
+    lastName: "Depp",
+  };
+
+  beforeEach(async () => {
+    await prisma.children.deleteMany();
+    await prisma.parent.deleteMany();
+  });
+
   afterEach(async () => {
     await prisma.children.deleteMany();
     await prisma.parent.deleteMany();
@@ -196,6 +208,17 @@ describe("parent_child_api", () => {
     response.body.should.eql(results[0]);
   });
 
+  it("should delete associated child data while deleting parent", async () => {
+    await parentSetup(parent_1);
+    await childSetup(children_1);
+    const deleteResponse = await chai.request(server).delete("/parent").send({
+      parentID: 301,
+    });
+    const response = await chai.request(server).get("/childrenWithParent/301");
+    response.should.have.status(200);
+    response.body.should.eql([]);
+  });
+
   it("should not create child if parent not found", async () => {
     const response = await chai
       .request(server)
@@ -225,6 +248,18 @@ describe("parent_child_api", () => {
     const expectedData = [
       { ...childResults[0], parentInfo: { ...parentResults[0] } },
       { ...childResults[1], parentInfo: { ...parentResults[1] } },
+    ];
+    response.should.have.status(200);
+    response.body.should.eql(expectedData);
+  });
+
+  it("should fetch all the child data associated with given parent id", async () => {
+    const parentResults = await parentSetup(parent_1);
+    const childResults = await childSetup(children_1, children_3);
+    const response = await chai.request(server).get("/children");
+    const expectedData = [
+      { ...childResults[0], parentInfo: { ...parentResults[0] } },
+      { ...childResults[1], parentInfo: { ...parentResults[0] } },
     ];
     response.should.have.status(200);
     response.body.should.eql(expectedData);

@@ -5,6 +5,7 @@ import {
   deleteParentService,
   updateParentService,
 } from "../service/parent.service.js";
+import { deleteChildWithParentIdService } from "../service/children.service.js";
 
 const parentDataEntry = async (req, res) => {
   const { address, ...parentData } = req.body;
@@ -38,6 +39,9 @@ const parentDataUpdate = async (req, res) => {
 };
 
 const parentDataDelete = async (req, res) => {
+  const deleteChildData = await deleteChildWithParentIdService(
+    req.body.parentID
+  );
   const response = await deleteParentService(req.body.parentID);
   res.status(202).send(response);
 };

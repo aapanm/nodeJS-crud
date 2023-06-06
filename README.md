@@ -60,10 +60,14 @@ To run the project's tests, use the following command:
 npm test
 ```
 
+It will output something like this:
+
+![test](docs/test.png)
+
 This will execute the defined test cases and provide the test results.
 
 Following links provide more insights about the project:
 
 1. [Database Information](docs/dbDoc.md)
 2. [Api Documnetation](docs/apiDoc.md)
-3. [Test Documentation](unit.xml)
+3. [Test Documentation](docs/unit.md)

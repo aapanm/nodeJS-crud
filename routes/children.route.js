@@ -1,6 +1,7 @@
 import express from "express";
 import {
   getChildrenList,
+  getChildrenListWithParentId,
   childrenDataEntry,
   getChildren,
   childrenDataDelete,
@@ -12,6 +13,11 @@ const route = express.Router();
 
 route.get("/children", contentTypeSetup, getChildrenList);
 route.get("/children/:childrenID", contentTypeSetup, getChildren);
+route.get(
+  "/childrenWithParent/:parentID",
+  contentTypeSetup,
+  getChildrenListWithParentId
+);
 route.post("/createChildren", contentTypeSetup, childrenDataEntry);
 route.put("/updateChildren", contentTypeSetup, childrenDataUpdate);
 route.delete("/children", contentTypeSetup, childrenDataDelete);

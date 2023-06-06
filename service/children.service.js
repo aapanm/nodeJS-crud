@@ -14,6 +14,23 @@ const getChildListService = async () => {
   }
 };
 
+const getChildListWithParentIdService = async (id) => {
+  try {
+    const getResponse = await prisma.children.findMany({
+      where: {
+        parentIdx: +id,
+      },
+      include: {
+        parentInfo: true,
+      },
+    });
+    return getResponse;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 const getChildWithId = async (id) => {
   try {
     const getResponse = await prisma.$queryRaw`
@@ -80,10 +97,26 @@ const deleteChildService = async (id) => {
   }
 };
 
+const deleteChildWithParentIdService = async (id) => {
+  try {
+    const deleteResponse = await prisma.children.deleteMany({
+      where: {
+        parentIdx: id,
+      },
+    });
+    return deleteResponse;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};
+
 export {
   getChildListService,
   createChildService,
   getChildWithId,
   deleteChildService,
   updateChildService,
+  deleteChildWithParentIdService,
+  getChildListWithParentIdService,
 };

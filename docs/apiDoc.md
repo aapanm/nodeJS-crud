@@ -253,6 +253,61 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
     ]
     ```
 
+### Get Children List With Parent Id
+
+- **URL**: `/childrenWithParent/:parentID`
+- **Method**: `GET`
+- **Description**: when triggered it shows all exisiting children data fron children table along with associated with provided parent id.
+- **Parameters**:
+  - `parentID`: This is the parentIdx stored in the child table which is used to fetch a child data from the db.
+- **Response**:
+  - ```json
+    [
+      {
+        "id": 129,
+        "childId": 501,
+        "firstName": "Johny",
+        "lastName": "Depp",
+        "parentIdx": 301,
+        "createdAt": "2023-06-06T11:09:05.508Z",
+        "updatedAt": "2023-06-06T11:09:05.508Z",
+        "parentInfo": {
+          "id": 524,
+          "parentId": 301,
+          "firstName": "aapan",
+          "lastName": "mutsuddy",
+          "street": "2",
+          "city": "CTG",
+          "state": "CTG",
+          "zip": "4000",
+          "createdAt": "2023-06-06T11:08:53.094Z",
+          "updatedAt": "2023-06-06T11:08:53.094Z"
+        }
+      },
+      {
+        "id": 130,
+        "childId": 502,
+        "firstName": "Johny",
+        "lastName": "Depp",
+        "parentIdx": 301,
+        "createdAt": "2023-06-06T11:09:11.562Z",
+        "updatedAt": "2023-06-06T11:09:11.562Z",
+        "parentInfo": {
+          "id": 524,
+          "parentId": 301,
+          "firstName": "aapan",
+          "lastName": "mutsuddy",
+          "street": "2",
+          "city": "CTG",
+          "state": "CTG",
+          "zip": "4000",
+          "createdAt": "2023-06-06T11:08:53.094Z",
+          "updatedAt": "2023-06-06T11:08:53.094Z"
+        }
+      }
+    ]
+    ```
+
 ### Get Children With ID
 
 - **URL**: `/children/:childrenID`
@@ -342,4 +397,4 @@ If any required fields are missing in the request body, the middleware will send
 
 In conclusion, this API documentation provides a comprehensive guide on how to interact with the 'Parent Child Api'. It has covered the authentication mechanism, base URL, and detailed information about each endpoint, including their purpose, parameters, request/response structures, and possible error scenarios.
 
-[Test Documentation](../unit.xml)
+[Test Documentation](unit.md)
