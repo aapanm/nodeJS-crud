@@ -60,6 +60,18 @@ To run the project's tests, use the following command:
 npm test
 ```
 
+if above command show any error try insatlling Mocha as global dependency with following command:
+
+```bash
+npm install -g mocha
+```
+
+and then change test script to
+
+```bash
+"test": "mocha test --reporter mocha-multi-reporters --reporter-options configFile=config.json",
+```
+
 It will output something like this:
 
 ![test](docs/test.png)

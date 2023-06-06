@@ -63,9 +63,7 @@ The `Children` table represents child entities and contains the following fields
 
 ## Database Operations
 
-To perform database operations using the defined schema, follow these steps:
-
-1. Generate Prisma Client: Run `npx prisma generate` in the terminal to generate the Prisma Client, which provides a type-safe API for accessing the database.
+1. Generate tables: Run `npx prisma migrate dev` in the terminal to generate the necessary tables in the database.
 
 2. Follow this link to read about the [Api Documentation](apiDoc.md)
 3. [Test Documentation](unit.md)
