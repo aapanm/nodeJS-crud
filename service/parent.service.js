@@ -1,6 +1,8 @@
+//importing prisma to perfoem db operations
 import { PrismaClient, Prisma } from "@prisma/client";
 const prisma = new PrismaClient();
 
+// all parent serviecs with queries
 const getParentListService = async () => {
   try {
     const getResponse = await prisma.parent.findMany();

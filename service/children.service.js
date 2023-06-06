@@ -1,6 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
+// all children services with queries
 const getChildListService = async () => {
   try {
     const getResponse = await prisma.children.findMany({

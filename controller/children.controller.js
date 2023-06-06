@@ -1,3 +1,4 @@
+//importing services
 import {
   getChildListService,
   getChildListWithParentIdService,
@@ -8,6 +9,7 @@ import {
 } from "../service/children.service.js";
 import { getParentWithId } from "../service/parent.service.js";
 
+//all children controller to create, update, fetch and deletetion
 const getChildrenList = async (req, res) => {
   const response = await getChildListService();
   res.status(200).send(response);

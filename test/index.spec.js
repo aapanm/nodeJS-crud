@@ -162,7 +162,7 @@ describe("parent_child_api", () => {
     delete result[0].updatedAt;
     const response = await chai
       .request(server)
-      .put("/updateParent")
+      .patch("/updateParent")
       .send({
         parentID: 301,
         data: {
@@ -185,7 +185,7 @@ describe("parent_child_api", () => {
     await parentSetup(parent_1);
     const response = await chai
       .request(server)
-      .put("/updateParent")
+      .patch("/updateParent")
       .send({
         parentID: 302,
         data: {
@@ -270,7 +270,7 @@ describe("parent_child_api", () => {
     const result = await childSetup(children_1);
     const response = await chai
       .request(server)
-      .put("/updateChildren")
+      .patch("/updateChildren")
       .send({
         childID: 501,
         data: {

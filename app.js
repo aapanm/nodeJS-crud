@@ -5,9 +5,12 @@ import childrenRoute from "./routes/children.route.js";
 const app = express();
 
 app.use(express.json());
+
+//using routes
 app.use(parentRoute);
 app.use(childrenRoute);
 
+//index route
 app.get("/", (req, res) => {
   res.send("welcome to parent child user system");
 });

@@ -14,7 +14,7 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
 
 - **URL**: `/parent`
 - **Method**: `GET`
-- **Description**: when triggered it shows all exisiting parents data fron parent table.
+- **Description**: when triggered it shows all exisiting parents data from parent table.
 - **Response**:
   - ```json
     [
@@ -113,11 +113,17 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
   ```json
   { "error": "One or more than one requried fields missing!" }
   ```
+  - 409 conflict error can be returned if parent already exists with a json code as following
+  ```json
+  {
+    "error": "Record with the same ID already exists."
+  }
+  ```
 
 ### Update Parent
 
 - **URL**: `/updateParent`
-- **Method**: `PUT`
+- **Method**: `PATCH`
 - **Description**: When triggered dynamically updates given fields in the request body.
 - **Request Body**:
   - ```json
@@ -225,7 +231,7 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
 
 - **URL**: `/children`
 - **Method**: `GET`
-- **Description**: when triggered it shows all exisiting children data fron children table along with associated parent information.
+- **Description**: when triggered it shows all exisiting children data from children table along with associated parent information.
 - **Response**:
   - ```json
     [
@@ -257,7 +263,7 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
 
 - **URL**: `/childrenWithParent/:parentID`
 - **Method**: `GET`
-- **Description**: when triggered it shows all exisiting children data fron children table along with associated with provided parent id.
+- **Description**: when triggered it shows all exisiting children data from children table along with associated with provided parent id.
 - **Parameters**:
   - `parentID`: This is the parentIdx stored in the child table which is used to fetch a child data from the db.
 - **Response**:
@@ -331,7 +337,7 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
 ### Update Children
 
 - **URL**: `/updateChildren`
-- **Method**: `PUT`
+- **Method**: `PATCH`
 - **Description**: When triggered dynamically updates given fields in the request body.
 - **Request Body**:
   - ```json

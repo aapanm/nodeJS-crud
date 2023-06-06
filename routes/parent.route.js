@@ -1,4 +1,6 @@
 import express from "express";
+
+//importing parent controllers
 import {
   getParentList,
   parentDataEntry,
@@ -6,6 +8,8 @@ import {
   parentDataDelete,
   parentDataUpdate,
 } from "../controller/parent.controller.js";
+
+//importing middlewares
 import {
   validateJSON,
   contentTypeSetup,
@@ -13,10 +17,13 @@ import {
 
 const route = express.Router();
 
-route.get("/parent", getParentList);
-route.get("/parent/:parentID", getParent);
+//parent routes with parameters
+//middlware with routes to validate and set content type
+
+route.get("/parent", contentTypeSetup, getParentList);
+route.get("/parent/:parentID", contentTypeSetup, getParent);
 route.post("/createParent", [validateJSON, contentTypeSetup], parentDataEntry);
-route.put("/updateParent", parentDataUpdate);
-route.delete("/parent", parentDataDelete);
+route.patch("/updateParent", contentTypeSetup, parentDataUpdate);
+route.delete("/parent", contentTypeSetup, parentDataDelete);
 
 export default route;

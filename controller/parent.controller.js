@@ -1,3 +1,4 @@
+//importing sevices
 import {
   createParentService,
   getParentListService,
@@ -6,6 +7,8 @@ import {
   updateParentService,
 } from "../service/parent.service.js";
 import { deleteChildWithParentIdService } from "../service/children.service.js";
+
+// controller methods to create, update, fetch and delete data
 
 const parentDataEntry = async (req, res) => {
   const { address, ...parentData } = req.body;
