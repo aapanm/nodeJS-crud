@@ -113,6 +113,18 @@ describe("parent_child_api", () => {
     });
   });
 
+  it("should not create a new parent if it already exists", async () => {
+    await parentSetup(parent_1);
+    const response = await chai
+      .request(server)
+      .post("/createParent")
+      .send(parent_1);
+    response.should.have.status(409);
+    response.body.should.eql({
+      error: "Record with the same ID already exists.",
+    });
+  });
+
   it("should fetch all the parents", async () => {
     const results = await parentSetup(parent_1, parent_2);
     const response = await chai.request(server).get("/parent");

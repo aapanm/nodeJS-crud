@@ -1,4 +1,4 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const getParentListService = async () => {
@@ -26,7 +26,7 @@ const createParentService = async (data) => {
     return createResponse;
   } catch (error) {
     if (
-      error instanceof prisma.PrismaClientKnownRequestError &&
+      error instanceof Prisma.PrismaClientKnownRequestError &&
       error.code === "P2002"
     ) {
       return { error: "Record with the same ID already exists." };

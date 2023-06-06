@@ -262,15 +262,15 @@ Specify the base URL for the API endpoints. For example: `https://localhost:8000
   - `childrenID`: This is the childrenID stored in the children table which is used to fetch a particular row from the db.
 - **Response**:
   - ```json
-    [
-      {
-        "firstName": "Johny",
-        "lastName": "Depp",
-        "parentFirstName": "aapan",
-        "parentLastName": "mutsuddy",
-        "parentAddress": "2,CTG,CTG,1000"
+    {
+      "firstName": "Johny",
+      "lastName": "Depp",
+      "parentInfo": {
+        "firstName": "aapan",
+        "lastName": "mutsuddy",
+        "address": "2,CTG,CTG,4000"
       }
-    ]
+    }
     ```
 
 ### Update Children
@@ -337,10 +337,6 @@ If any required fields are missing in the request body, the middleware will send
   "error": "One or more required fields missing!"
 }
 ```
-
-## Error Handling
-
-Describe how errors are handled by the API and provide examples of error responses.
 
 ## Conclusion
 

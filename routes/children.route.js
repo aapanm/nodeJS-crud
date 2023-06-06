@@ -6,13 +6,14 @@ import {
   childrenDataDelete,
   childrenDataUpdate,
 } from "../controller/children.controller.js";
+import { contentTypeSetup } from "../middleware/validate.middleware.js";
 
 const route = express.Router();
 
-route.get("/children", getChildrenList);
-route.get("/children/:childrenID", getChildren);
-route.post("/createChildren", childrenDataEntry);
-route.put("/updateChildren", childrenDataUpdate);
-route.delete("/children", childrenDataDelete);
+route.get("/children", contentTypeSetup, getChildrenList);
+route.get("/children/:childrenID", contentTypeSetup, getChildren);
+route.post("/createChildren", contentTypeSetup, childrenDataEntry);
+route.put("/updateChildren", contentTypeSetup, childrenDataUpdate);
+route.delete("/children", contentTypeSetup, childrenDataDelete);
 
 export default route;

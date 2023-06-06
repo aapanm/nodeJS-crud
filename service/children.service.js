@@ -16,16 +16,27 @@ const getChildListService = async () => {
 
 const getChildWithId = async (id) => {
   try {
-    const getResponse = await prisma.$queryRaw`SELECT
-													children.firstName , children.lastName ,
-													parent.firstName as parentFirstName, parent.lastName as parentLastName,
-													concat(parent.street, ',', parent.city, ',', parent.state, ',' , parent.zip) as parentAddress 
-												FROM
-													children
-													JOIN parent ON children.parentIdx = parent.parentId
-												WHERE
-													children.childId = ${id}`;
-    return getResponse;
+    const getResponse = await prisma.$queryRaw`
+    SELECT
+      children.firstName , children.lastName ,
+      parent.firstName as parentFirstName, parent.lastName as parentLastName,
+      concat(parent.street, ',', parent.city, ',', parent.state, ',' , parent.zip) as parentAddress 
+    FROM
+      children
+      JOIN parent ON children.parentIdx = parent.parentId
+    WHERE
+      children.childId = ${id}`;
+
+    const data = {
+      firstName: getResponse[0].firstName,
+      lastName: getResponse[0].lastName,
+      parentInfo: {
+        firstName: getResponse[0].parentFirstName,
+        lastName: getResponse[0].parentLastName,
+        address: getResponse[0].parentAddress,
+      },
+    };
+    return data;
   } catch (error) {
     return error;
   }

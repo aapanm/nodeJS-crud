@@ -18,4 +18,9 @@ const validateJSON = (req, res, next) => {
   }
 };
 
-export { validateJSON };
+const contentTypeSetup = (req, res, next) => {
+  res.setHeader("Content-Type", "application/json");
+  next();
+};
+
+export { validateJSON, contentTypeSetup };
