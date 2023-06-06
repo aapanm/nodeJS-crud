@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="0.784" tests="16" failures="0">
-  <testsuite name="Root Suite" timestamp="2023-06-06T14:04:39" tests="0" time="0.000" failures="0">
+<testsuites name="Mocha Tests" time="0.804" tests="16" failures="0">
+  <testsuite name="Root Suite" timestamp="2023-06-06T14:33:23" tests="0" time="0.000" failures="0">
   </testsuite>
-  <testsuite name="parent_child_api" timestamp="2023-06-06T14:04:39" tests="16" file="user-app\test\index.spec.js" time="0.775" failures="0">
-    <testcase name="parent_child_api should create a new parent" time="0.068" classname="should create a new parent">
+  <testsuite name="parent_child_api" timestamp="2023-06-06T14:33:23" tests="16" file="user-app\test\index.spec.js" time="0.790" failures="0">
+    <testcase name="parent_child_api should create a new parent" time="0.076" classname="should create a new parent">
     </testcase>
     <testcase name="parent_child_api should not create a new parent with fields missing" time="0.009" classname="should not create a new parent with fields missing">
     </testcase>
-    <testcase name="parent_child_api should not create a new parent if it already exists" time="0.033" classname="should not create a new parent if it already exists">
+    <testcase name="parent_child_api should not create a new parent if it already exists" time="0.034" classname="should not create a new parent if it already exists">
     </testcase>
-    <testcase name="parent_child_api should fetch all the parents" time="0.032" classname="should fetch all the parents">
+    <testcase name="parent_child_api should fetch all the parents" time="0.040" classname="should fetch all the parents">
     </testcase>
-    <testcase name="parent_child_api should fetch no parents if there are not parents stored" time="0.007" classname="should fetch no parents if there are not parents stored">
+    <testcase name="parent_child_api should fetch no parents if there are not parents stored" time="0.008" classname="should fetch no parents if there are not parents stored">
     </testcase>
-    <testcase name="parent_child_api should fetch parent with given parent id" time="0.020" classname="should fetch parent with given parent id">
+    <testcase name="parent_child_api should fetch parent with given parent id" time="0.026" classname="should fetch parent with given parent id">
     </testcase>
-    <testcase name="parent_child_api should update parent data" time="0.027" classname="should update parent data">
+    <testcase name="parent_child_api should update parent data" time="0.029" classname="should update parent data">
     </testcase>
-    <testcase name="parent_child_api should not update if parent not found in database" time="0.021" classname="should not update if parent not found in database">
+    <testcase name="parent_child_api should not update if parent not found in database" time="0.022" classname="should not update if parent not found in database">
     </testcase>
-    <testcase name="parent_child_api should delete parent" time="0.037" classname="should delete parent">
+    <testcase name="parent_child_api should delete parent" time="0.038" classname="should delete parent">
     </testcase>
-    <testcase name="parent_child_api should delete associated child data while deleting parent" time="0.056" classname="should delete associated child data while deleting parent">
+    <testcase name="parent_child_api should delete associated child data while deleting parent" time="0.053" classname="should delete associated child data while deleting parent">
     </testcase>
-    <testcase name="parent_child_api should not create child if parent not found" time="0.005" classname="should not create child if parent not found">
+    <testcase name="parent_child_api should not create child if parent not found" time="0.007" classname="should not create child if parent not found">
     </testcase>
-    <testcase name="parent_child_api should create a child" time="0.046" classname="should create a child">
+    <testcase name="parent_child_api should create a child" time="0.023" classname="should create a child">
     </testcase>
-    <testcase name="parent_child_api should fetch all the child with parent info" time="0.055" classname="should fetch all the child with parent info">
+    <testcase name="parent_child_api should fetch all the child with parent info" time="0.057" classname="should fetch all the child with parent info">
     </testcase>
-    <testcase name="parent_child_api should fetch all the child data associated with given parent id" time="0.043" classname="should fetch all the child data associated with given parent id">
+    <testcase name="parent_child_api should fetch all the child data associated with given parent id" time="0.044" classname="should fetch all the child data associated with given parent id">
     </testcase>
-    <testcase name="parent_child_api should update child data" time="0.034" classname="should update child data">
+    <testcase name="parent_child_api should update child data" time="0.040" classname="should update child data">
     </testcase>
-    <testcase name="parent_child_api should delete child" time="0.037" classname="should delete child">
+    <testcase name="parent_child_api should delete child" time="0.034" classname="should delete child">
     </testcase>
   </testsuite>
 </testsuites>
